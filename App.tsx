@@ -4,7 +4,8 @@
  *
  * @format
  */
-
+import 'react-native-get-random-values'
+// import 'react-native-url-polyfill/auto';
 import React from 'react';
 import AppNavigator from "./src/Navigator/AppNavigator";
 import { Provider } from 'react-redux';

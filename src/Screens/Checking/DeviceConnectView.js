@@ -21,10 +21,10 @@ function DeviceConnectView(props) {
 
       <TouchableOpacity onPress={()=>{
 
-        BluetoothModule.searchEvent("name").then(res=>{
+        BluetoothModule.openNativeEvent("reactStr").then(res=>{
           console.log("searchEvent")
           console.log(res)
-          setLst(res)
+          alert(res)
         }).catch(err=>{
 
         })
@@ -33,18 +33,6 @@ function DeviceConnectView(props) {
         <Text>Search</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=>{
-
-        BluetoothModule.connectEvent("name",(res)=>{
-          console.log("connectEvent")
-          console.log(res)
-
-          alert(res['key0'])
-        })
-
-      }} style={[GStyle.jc,GStyle.ac,{flex:1,backgroundColor:'#456',borderRadius:tSize(10)}]}>
-        <Text>Connect</Text>
-      </TouchableOpacity>
 
     </View>
 

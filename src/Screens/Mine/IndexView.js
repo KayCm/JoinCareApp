@@ -27,7 +27,7 @@ function IndexView(props) {
   const [vCode, setVCode] = useState('');
 
   const getStr = () => {
-    let url = 'http://39.107.119.127:9595/user/str';
+    let url = 'http://39.107.119.127:9595/user/random/str';
     let params = {
       address: address,
     };
@@ -118,6 +118,16 @@ function IndexView(props) {
     }}>
       <Text style={{color:'#000'}}>Sign</Text>
     </TouchableOpacity>
+
+
+    <TouchableOpacity style={[GStyle.jc,GStyle.ac,{marginTop:tSize(10),height:tSize(44),backgroundColor:'#fff',width:'100%'}]} onPress={()=>{
+      props.navigation.push('CreateWallet')
+    }}>
+      <Text style={{color:'#000'}}>CreateWallet</Text>
+    </TouchableOpacity>
+
+
+
 
     <Text style={{color:'#000'}}>{vCode}</Text>
 

@@ -2,6 +2,7 @@ import { View, Text, Button, TouchableOpacity } from "react-native";
 import NavHeader from "../../Components/NavHeader";
 import GStyle, { tSize } from "../../Components/GStyle";
 import { useSelector } from "react-redux";
+import BluetoothModule from "../../Components/BluetoothConnect";
 function IndexView(props) {
 
   const {navigation} = props
@@ -21,7 +22,17 @@ function IndexView(props) {
     </View>
 
     <TouchableOpacity style={[GStyle.jc,GStyle.ac,{height:tSize(44),backgroundColor:'#fff',width:'100%'}]} onPress={()=>{
-      props.navigation.push('DeviceConnect')
+      //props.navigation.push('DeviceConnect')
+      
+      BluetoothModule.openNativeEvent("reactStr").then(res=>{
+        console.log(res)
+        alert(res)
+      }).catch(err=>{
+
+      })
+
+
+
     }}>
       <Text style={{color:'#000'}}>绑定设备</Text>
     </TouchableOpacity>
